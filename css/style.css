@@ -20,7 +20,7 @@ body {
 }
 
 #title button {
-	float: right;
+  float: right;
 	margin-top: 10px;
 	margin-right: 0px;
 	padding: 0px
@@ -38,15 +38,20 @@ p {
 }
 
 #control {
-	border: 2px solid #FFF; 
 	padding: 0px;
 }
 
 #control button {
 	margin: 0px;
+	border: 3px outset gray;
+}
+
+#control button:active {
+	border: 3px solid grey;
 }
 
 #control button:hover {
+  border: 2px solid #FFF;
 }
 
 #footer {
@@ -75,6 +80,3 @@ ul li {
 ul li:hover {
 	background: #988558;
 }
-
-
-
