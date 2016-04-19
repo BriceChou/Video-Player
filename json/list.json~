@@ -28,7 +28,7 @@
             "src":"video/sintel.mp4",
             "type":"video/mp4"
         },
-        {
+	{
             "id":5,
             "name":"trailer",
             "video_name":"trailer.mp4",

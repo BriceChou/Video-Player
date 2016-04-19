@@ -5,7 +5,7 @@ $(function() {
     if(video.paused) {
       video.play();
       $("#playOrPause").css({
-        "border":"3px solid grey"
+        "border":"3px inset grey"
       });
     } else {
        $("#playOrPause").css({
@@ -61,7 +61,7 @@ $(function() {
       });
     } else {
       $("#mute").css({
-        "border":"3px solid grey"
+        "border":"3px inset grey"
       });
       video.muted = true;
     }
