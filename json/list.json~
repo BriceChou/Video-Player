@@ -1,0 +1,34 @@
+{
+    "list":[
+        {
+            "id":1,
+            "name":"brownbear",
+            "src":"video/brownbear.mp4",
+            "type":"video/mp4"
+        },
+        {
+            "id":2,
+            "name":"brownbear",
+            "src":"video/brownbear.ogg",
+            "type":"video/ogg"
+        },
+        {
+            "id":3,
+            "name":"bunnytrailer",
+            "src":"video/bunnytrailer.mp4",
+            "type":"video/mp4"
+        },
+        {
+            "id":4,
+            "name":"sintel",
+            "src":"video/sintel.mp4",
+            "type":"video/mp4"
+        },
+ 	{
+            "id":5,
+            "name":"trailer",
+            "src":"video/trailer.mp4",
+            "type":"video/mp4"
+        }
+    ]
+}
