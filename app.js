@@ -90,7 +90,9 @@ function play(e){
         "controls":true,
         "loop":true,
         "autoplay":true,
-        "type":arr[1]
+        "type":arr[1],
+        "height":"240px",
+        "width":"320px"
     });
 }
 
