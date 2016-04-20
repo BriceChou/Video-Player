@@ -18,7 +18,7 @@ $(function() {
   //when page onload and load the local JSON file
   $.getJSON("json/list.json", function(data, status) {
     // console.log("Data: " + data + "\nStatus: " + status);
-    $("#list").append("<ul id = \"playList\"><h1 class=\"h1\">Play List</h1></ul>");
+    $("#list").append("<ul id = \"playList\">Play List</ul>");
     $.each(data.list, function(i, item) {
       $("#playList").append("<a id= \"" + item.name + "\" onclick = \"play(this);\"><li>" + (i+1) + ". " + item.video_name + "</li></a>");
       //record the src URL via input value
@@ -59,10 +59,10 @@ function failed(e) {
 
 //switch the play list action and video play action 
 function list() {
+  /*
   if($("#list").is(":hidden")) {
     $("#video").hide(500);
     $("#list").show();
-    
     //奇数行
     //$("ul li:odd").css({"background-color":"#c3bbb9"});	
     //偶数行
@@ -71,6 +71,8 @@ function list() {
     $("#list").hide();
     $("#video").show();
   }
+  */
+  $("#list").toggle();
 }
 
 
@@ -78,7 +80,6 @@ function list() {
 function play(e) {
   var id = e.id;
   var arr = byId("i" + id).value.split(";");
-  //  var jsonObj = JSON.parse(jsonStr);
   $("#h1").html(id);
   $("#list").hide();
   $("#video").show();
@@ -96,27 +97,6 @@ function play(e) {
 
 // get the current time
 function getCurrentTime() {
-  /*  
-  var ajax = ajaxObject();
-  ajax.open("GET", "http://www.timeapi.org/utc/now", false); 
-  ajax.setRequestHeader( "Content-Type" , "application/x-www-form-urlencoded" );
-  ajax.send(); 
-  $.getJSON("http://www.timeapi.org/utc/now", function (result, status) {
-    console.log("Data: " + data + "\nStatus: " + status);
-    alert("Data: " + data + "\nStatus: " + status);
-    var date = new Date(result);
-    console.log(result);
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
-    var date1 = date.getDate();
-    var hour = date.getHours();
-    var minutes = date.getMinutes();
-    var second = date.getSeconds();
-    var time = year + "-" + month + "-" + date1 + " " + hour + ":" + minutes + ":" + second;
-    console.log("time: " + time);
-    $("#time").html(time);
-  }, "html");
-  */
   var date = new Date();
   var year = date.getFullYear();
   var month = date.getMonth() + 1;

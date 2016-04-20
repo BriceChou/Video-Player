@@ -24,12 +24,13 @@
   <body>
     <!-- index page title-->
     <div id="title" class="title">
-      <h1 id="h1" class="h1">MPlayer</h1>
-      <a><button onclick="list();" >List/Video</button></a>
+      <h1 id="h1">MPlayer</h1>
+      <a hidden><img class="img" onclick="list();" src="icons/play/13.ico"/>List/Video</a>
+      <a><button onclick="list();">List/Video</button></a>
     </div>
                               
     <!--video play list area -->
-    <div id="list" hidden >
+    <div id="list" class="list" hidden >
     </div>
      <!--video introduction area -->
     <div id="content" class="content">
@@ -49,7 +50,7 @@
     </div> 
     
     <!--contol the video button area -->
-    <div id="control" class="control">
+    <div id="control" class="control" >
       <button id="playOrPause" >播放/暂停</button>
       <button id="stop" >停止</button>
       <button id="reload" >重新加载</button>
@@ -63,7 +64,7 @@
       
     </div>
     
-    <div id="control" hidden >
+    <div id="control" class="imgControl" hidden>
       <a><img src="icons/play/0.ico"/></a>
       <a><img src="icons/play/0.ico"/></a>
       <a><img src="icons/play/0.ico"/></a>

@@ -103,7 +103,7 @@ $(function() {
     var nums = [];
     context.fillStyle = "SkyBlue"
     var date = new Date();
-    var offsetX = 35, offsetY = 15;
+    var offsetX = 15, offsetY = 15;
     var hours = date.getHours() - 8;
     if(hours < 0) {
       hours = hours + 24;
@@ -206,7 +206,6 @@ $(function() {
   
   function drawSingleNumber(offsetX, offsetY, num, cxt) {
     var numMatrix = digit[num];
-    console.log(digit[num] + ",num" + num);
 	  for(var y = 0;y<numMatrix.length;y++) {
 	    for(var x = 0;x<numMatrix[y].length;x++) {
         if(numMatrix[y][x]==1){
