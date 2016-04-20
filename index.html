@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
     
     <title>Video Player</title>
     
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
     
     <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
     so we use a script file. -->
@@ -14,6 +14,8 @@
     <script src="control.js" defer ></script>
     <script src="js/jquery.js" ></script>
     <script src="js/json.js" ></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/zzsc.js"></script>
     <!--  <script src="map.collection.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/utilTools.js"> </script>
@@ -41,10 +43,10 @@
       <video id="video" width="320px" src="video/sintel.mp4" type="video/mp4" height="240px" onerror="failed(event)" >
         Your brower does not support HTML video.</video>
     </div> 
-    <!-- canvas area
+    <!-- canvas area-->
     <div>
     <canvas id = "canvas" width="320px" height="240px"></canvas> 
-    </div> -->
+    </div> 
     
     <!--contol the video button area -->
     <div id="control" >
@@ -62,10 +64,10 @@
     </div>
     
     <div id="control" hidden >
-      <a><img src="icons/play/0.ico" /></a>
-      <a><img src="icons/play/0.ico" /></a>
-      <a><img src="icons/play/0.ico" /></a>
-      <a><img src="icons/play/0.ico" /></a>
+      <a><img src="icons/play/0.ico"/></a>
+      <a><img src="icons/play/0.ico"/></a>
+      <a><img src="icons/play/0.ico"/></a>
+      <a><img src="icons/play/0.ico"/></a>
     </div>
     
     <!--footer area -->

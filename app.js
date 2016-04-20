@@ -1,6 +1,7 @@
 window.addEventListener("load", function () {
-  var width=document.documentElement.clientWidth ;//可见区域宽度
-  var height=document.documentElement.clientHeight;//可见区域高度
+  var width = document.documentElement.clientWidth;//可见区域宽度
+  var height = document.documentElement.clientHeight;//可见区域高度
+  //console.log("width:" + width + "px,Height:" + height + "px.");
   $("body").css({
     "width":width,
     "height":height,
@@ -12,10 +13,8 @@ window.addEventListener("load", function () {
 });
 
 $(function() {  
-  
   //get the date time now
   setInterval(getCurrentTime, 1000);
-
   //when page onload and load the local JSON file
   $.getJSON("json/list.json", function(data, status) {
     // console.log("Data: " + data + "\nStatus: " + status);
@@ -63,6 +62,7 @@ function list() {
   if($("#list").is(":hidden")) {
     $("#video").hide(500);
     $("#list").show();
+    
     //奇数行
     //$("ul li:odd").css({"background-color":"#c3bbb9"});	
     //偶数行

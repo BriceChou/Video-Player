@@ -1,4 +1,5 @@
 $(function() {
+  
   //play the video ro pause the video
   $("#playOrPause").click(function() {
     var video = byId("video");
