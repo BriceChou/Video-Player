@@ -23,8 +23,8 @@
   </head>
   <body>
     <!-- index page title-->
-    <div id="title" >
-      <h1 id="h1" >MPlayer</h1>
+    <div id="title" class="title">
+      <h1 id="h1" class="h1">MPlayer</h1>
       <a><button onclick="list();" >List/Video</button></a>
     </div>
                               
@@ -32,7 +32,7 @@
     <div id="list" hidden >
     </div>
      <!--video introduction area -->
-    <div id="content" >
+    <div id="content" class="content">
       <p> This is a Firefox video player sample! </p>
       <p> This is a Firefox video player sample! </p>
       <p> This is a Firefox video player sample! Welcome to u,my dear BriceChou! Welcome to u,my dear BriceChou!</p>
@@ -40,16 +40,16 @@
     
     <!--video player area  -->
     <div id = "videoArea">
-      <video id="video" width="320px" src="video/sintel.mp4" type="video/mp4" height="240px" onerror="failed(event)" >
+      <video id="video" class ="video" width="320px" src="video/sintel.mp4" type="video/mp4" height="240px" onerror="failed(event)">
         Your brower does not support HTML video.</video>
     </div> 
     <!-- canvas area-->
     <div>
-    <canvas id = "canvas" width="320px" height="240px"></canvas> 
+    <canvas id="canvas" class="canvas" width="320px" height="240px"></canvas> 
     </div> 
     
     <!--contol the video button area -->
-    <div id="control" >
+    <div id="control" class="control">
       <button id="playOrPause" >播放/暂停</button>
       <button id="stop" >停止</button>
       <button id="reload" >重新加载</button>
@@ -71,9 +71,9 @@
     </div>
     
     <!--footer area -->
-    <div id="footer" >
+    <div id="footer" class="footer">
       <p> 显示当前时间:</p>
-      <p id="time" >Default Time</p>
+      <p id="time" class="time">Default Time</p>
     </div>  
   </body>
 </html>

@@ -1,6 +1,7 @@
 /*
 * copy code from internet
 * only a exmple for me and study canvas how to use 
+* and I have reformatted this code
 */
 $(function() {
   var WINDOW_WIDTH = 300;//可见区域宽度
@@ -104,6 +105,9 @@ $(function() {
     var date = new Date();
     var offsetX = 35, offsetY = 15;
     var hours = date.getHours() - 8;
+    if(hours < 0) {
+      hours = hours + 24;
+    }
     var num1 = Math.floor(hours/10);
     var num2 = hours%10;
     nums.push({num: num1});
@@ -152,7 +156,7 @@ $(function() {
   function addBalls(item) {
     var num = item.num;
     var numMatrix = digit[num];
-    for(var y = 0;y<numMatrix.length;y++) {
+    for(var y = 0;y < numMatrix.length;y++) {
       for(var x = 0;x<numMatrix[y].length;x++) {
         if(numMatrix[y][x] == 1){
         var ball = {  
@@ -202,6 +206,7 @@ $(function() {
   
   function drawSingleNumber(offsetX, offsetY, num, cxt) {
     var numMatrix = digit[num];
+    console.log(digit[num] + ",num" + num);
 	  for(var y = 0;y<numMatrix.length;y++) {
 	    for(var x = 0;x<numMatrix[y].length;x++) {
         if(numMatrix[y][x]==1){

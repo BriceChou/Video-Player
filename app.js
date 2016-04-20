@@ -1,4 +1,4 @@
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
   var width = document.documentElement.clientWidth;//可见区域宽度
   var height = document.documentElement.clientHeight;//可见区域高度
   //console.log("width:" + width + "px,Height:" + height + "px.");
@@ -18,7 +18,7 @@ $(function() {
   //when page onload and load the local JSON file
   $.getJSON("json/list.json", function(data, status) {
     // console.log("Data: " + data + "\nStatus: " + status);
-    $("#list").append("<ul id = \"playList\"><h1>Play List</h1></ul>");
+    $("#list").append("<ul id = \"playList\"><h1 class=\"h1\">Play List</h1></ul>");
     $.each(data.list, function(i, item) {
       $("#playList").append("<a id= \"" + item.name + "\" onclick = \"play(this);\"><li>" + (i+1) + ". " + item.video_name + "</li></a>");
       //record the src URL via input value
