@@ -3,14 +3,14 @@
   "description": "This is a  video player app.",
   "launch_path": "/index.html",
   "icons": {
-    "16": "/icons/icon16x16.png",
-    "48": "/icons/icon48x48.png",
-    "60": "/icons/icon60x60.png",
-    "128": "/icons/icon128x128.png"
+    "16": "res/icons/icon16x16.png",
+    "48": "res/icons/icon48x48.png",
+    "60": "res/icons/icon60x60.png",
+    "128": "res/icons/icon128x128.png"
   },
   "developer": {
     "name": "BriceChou",
     "url": "https://github.com/BriceChou/Video-Player"
   },
- "orientation": "portrait-primary" 
+ "orientation": "portrait-primary"
 }

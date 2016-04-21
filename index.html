@@ -3,32 +3,27 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
-    
+
     <title>Video Player</title>
-    
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    
+
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+
     <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
     so we use a script file. -->
-    <script src="app.js" defer ></script>
-    <script src="control.js" defer ></script>
-    <script src="js/jquery.js" ></script>
-    <script src="js/json.js" ></script>
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/zzsc.js"></script>
-    <!--  <script src="map.collection.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/utilTools.js"> </script>
-    <script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script> -->
+    <script src="js/app.js"></script>
+    <script src="js/control.js"></script>
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/libs/clock.js"></script>
   </head>
+
   <body>
-    <!-- index page title-->
-    <div id="title" class="title">
-      <h1 id="h1">MPlayer</h1>
-      <a hidden><img class="img" onclick="list();" src="icons/play/13.ico"/>List/Video</a>
-      <a><button onclick="list();">List/Video</button></a>
-    </div>
-                              
+    <!-- index page header-->
+  <header class="header">
+    <h1 id="h1">MPlayer</h1>
+    <hr />
+    <a hidden><img class="img" onclick="showList();" src="res/icons/play/13.ico"/>List/Video</a>
+    <a><button onclick="showList();">List/Video</button></a>
+  </header>
     <!--video play list area -->
     <div id="list" class="list" hidden >
     </div>
@@ -38,17 +33,18 @@
       <p> This is a Firefox video player sample! </p>
       <p> This is a Firefox video player sample! Welcome to u,my dear BriceChou! Welcome to u,my dear BriceChou!</p>
     </div>
-    
+
+
     <!--video player area  -->
     <div id = "videoArea">
-      <video id="video" class ="video" width="320px" src="video/sintel.mp4" type="video/mp4" height="240px" onerror="failed(event)">
+      <video id="video" class ="video" width="320px" src="res/video/sintel.mp4" type="video/mp4" height="240px" onerror="failed(event)">
         Your brower does not support HTML video.</video>
-    </div> 
+    </div>
     <!-- canvas area-->
     <div>
-    <canvas id="canvas" class="canvas" width="320px" height="240px"></canvas> 
-    </div> 
-    
+    <canvas id="canvas" class="canvas" width="320px" height="240px"></canvas>
+    </div>
+
     <!--contol the video button area -->
     <div id="control" class="control" >
       <button id="playOrPause" >播放/暂停</button>
@@ -61,20 +57,20 @@
       <button id="decelerateRate" >减速2倍播放</button>
       <button id="increaseVol" >音量增加</button>
       <button id="decreaseVol" >音量减少</button>
-      
+
     </div>
-    
+
     <div id="control" class="imgControl" hidden>
       <a><img src="icons/play/0.ico"/></a>
       <a><img src="icons/play/0.ico"/></a>
       <a><img src="icons/play/0.ico"/></a>
       <a><img src="icons/play/0.ico"/></a>
     </div>
-    
+
     <!--footer area -->
     <div id="footer" class="footer">
       <p> 显示当前时间:</p>
       <p id="time" class="time">Default Time</p>
-    </div>  
+    </div>
   </body>
 </html>
