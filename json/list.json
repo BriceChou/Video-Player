@@ -1,39 +1,33 @@
 {
-    "list":[
-        {
-            "id":1,
-            "name":"brownbear",
-            "video_name":"brownbear.mp4",
-            "src":"res/video/brownbear.mp4",
-            "type":"video/mp4"
-        },
-        {
-            "id":2,
-            "name":"brownbear(Audio)",
-            "video_name":"brownbear.ogg",
-            "src":"res/video/brownbear.ogg",
-            "type":"video/ogg"
-        },
-        {
-            "id":3,
-            "name":"bunnytrailer",
-            "video_name":"bunnytrailer.mp4",
-            "src":"res/video/bunnytrailer.mp4",
-            "type":"video/mp4"
-        },
-        {
-            "id":4,
-            "name":"sintel",
-            "video_name":"sintel.mp4",
-            "src":"res/video/sintel.mp4",
-            "type":"video/mp4"
-        },
-        {
-            "id":5,
-            "name":"trailer",
-            "video_name":"trailer.mp4",
-            "src":"res/video/trailer.mp4",
-            "type":"video/mp4"
-        }
-    ]
+    "list": [{
+        "id": 1,
+        "name": "brownbear",
+        "video_name": "brownbear.mp4",
+        "src": "res/video/brownbear.mp4",
+        "type": "video/mp4"
+    }, {
+        "id": 2,
+        "name": "brownbear(Audio)",
+        "video_name": "brownbear.ogg",
+        "src": "res/video/brownbear.ogg",
+        "type": "video/ogg"
+    }, {
+        "id": 3,
+        "name": "bunnytrailer",
+        "video_name": "bunnytrailer.mp4",
+        "src": "res/video/bunnytrailer.mp4",
+        "type": "video/mp4"
+    }, {
+        "id": 4,
+        "name": "sintel",
+        "video_name": "sintel.mp4",
+        "src": "res/video/sintel.mp4",
+        "type": "video/mp4"
+    }, {
+        "id": 5,
+        "name": "trailer",
+        "video_name": "trailer.mp4",
+        "src": "res/video/trailer.mp4",
+        "type": "video/mp4"
+    }]
 }

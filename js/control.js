@@ -2,14 +2,14 @@ $(function() {
   //play the video ro pause the video
   $("#playOrPause").click(function() {
     var video = byId("video");
-    if(video.paused) {
+    if (video.paused) {
       video.play();
       $("#playOrPause").css({
-        "border":"3px inset grey"
+        "border": "3px inset grey"
       });
     } else {
-       $("#playOrPause").css({
-        "border":"3px outset gray"
+      $("#playOrPause").css({
+        "border": "3px outset gray"
       });
       video.pause();
     }
@@ -36,12 +36,11 @@ $(function() {
     var currentTime = video.currentTime;
     var duration = video.duration;
     var ffd = duration - 5;
-    if (currentTime >  ffd || currentTime == ffd) {
+    if (currentTime > ffd || currentTime == ffd) {
       video.currentTime = ffd;
-      }
-    else {
+    } else {
       video.currentTime += 5;
-      }
+    }
   });
 
   //fast backward
@@ -54,14 +53,14 @@ $(function() {
   //video mute
   $("#mute").click(function() {
     var video = byId("video");
-    if(video.muted) {
+    if (video.muted) {
       video.muted = false;
       $("#mute").css({
-        "border":"3px outset gray"
+        "border": "3px outset gray"
       });
     } else {
       $("#mute").css({
-        "border":"3px inset grey"
+        "border": "3px inset grey"
       });
       video.muted = true;
     }
@@ -70,7 +69,7 @@ $(function() {
   //increase video volume
   $("#increaseVol").click(function() {
     var video = byId("video");
-    if(video.volume < 1) {
+    if (video.volume < 1) {
       video.volume += 0.2;
     }
   });
@@ -80,7 +79,7 @@ $(function() {
     var video = byId("video");
     var volume = new Number(video.volume);
     var vol = volume.toFixed(2) - 0.2;
-    if( vol > 0 || vol == 0) {
+    if (vol > 0 || vol == 0) {
       video.volume = vol;
     }
   });
@@ -101,7 +100,7 @@ $(function() {
   function keepPressed(name, attr, val) {
     var tempName = "#" + name + "";
     $(tempName).css({
-      attr:val
+      attr: val
     });
   }
 });

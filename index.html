@@ -3,10 +3,8 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
-
     <title>Video Player</title>
-
-    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="style/main.css" rel="stylesheet" type="text/css"/>
 
     <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
     so we use a script file. -->
@@ -15,62 +13,50 @@
     <script src="js/libs/jquery.js"></script>
     <script src="js/libs/clock.js"></script>
   </head>
-
   <body>
-    <!-- index page header-->
+
+  <!-- index page header-->
   <header class="header">
     <h1 id="h1">MPlayer</h1>
-    <hr />
-    <a hidden><img class="img" onclick="showList();" src="res/icons/play/13.ico"/>List/Video</a>
-    <a><button onclick="showList();">List/Video</button></a>
+    <button onclick="showList();">List/Video</button>
   </header>
-    <!--video play list area -->
-    <div id="list" class="list" hidden >
-    </div>
-     <!--video introduction area -->
-    <div id="content" class="content">
-      <p> This is a Firefox video player sample! </p>
-      <p> This is a Firefox video player sample! </p>
-      <p> This is a Firefox video player sample! Welcome to u,my dear BriceChou! Welcome to u,my dear BriceChou!</p>
-    </div>
 
+  <!--video play list area -->
+  <div id="list" class="playList" hidden >
+  </div>
 
-    <!--video player area  -->
-    <div id = "videoArea">
-      <video id="video" class ="video" width="320px" src="res/video/sintel.mp4" type="video/mp4" height="240px" onerror="failed(event)">
-        Your brower does not support HTML video.</video>
-    </div>
-    <!-- canvas area-->
-    <div>
-    <canvas id="canvas" class="canvas" width="320px" height="240px"></canvas>
-    </div>
+   <!--video introduction area -->
+  <div id="content" class="videoInformation">
+    <p> This is a Firefox video player sample! </p>
+    <p> This is a Firefox video player sample! </p>
+    <p> This is a Firefox video player sample! Welcome to u,my dear BriceChou! Welcome to u,my dear BriceChou!</p>
+  </div>
 
-    <!--contol the video button area -->
-    <div id="control" class="control" >
-      <button id="playOrPause" >播放/暂停</button>
-      <button id="stop" >停止</button>
-      <button id="reload" >重新加载</button>
-      <button id="mute" >静音</button>
-      <button id="ffd" >快进5秒</button>
-      <button id="fbd" >快退5秒</button>
-      <button id="speedRate" >加速2倍播放</button>
-      <button id="decelerateRate" >减速2倍播放</button>
-      <button id="increaseVol" >音量增加</button>
-      <button id="decreaseVol" >音量减少</button>
+  <!--video player area  -->
+  <video id="video" class ="videoArea" src="res/video/sintel.mp4" type="video/mp4" >
+    Your brower does not support HTML video.</video>
 
-    </div>
+  <!-- canvas area-->
+  <canvas id="canvas" class="clockCanvas" ></canvas>
 
-    <div id="control" class="imgControl" hidden>
-      <a><img src="icons/play/0.ico"/></a>
-      <a><img src="icons/play/0.ico"/></a>
-      <a><img src="icons/play/0.ico"/></a>
-      <a><img src="icons/play/0.ico"/></a>
-    </div>
+  <!--contol the video button area -->
+  <div id="control" class="controlVideo" >
+    <button id="playOrPause" >播放/暂停</button>
+    <button id="stop" >停止</button>
+    <button id="reload" >重新加载</button>
+    <button id="mute" >静音</button>
+    <button id="ffd" >快进5秒</button>
+    <button id="fbd" >快退5秒</button>
+    <button id="speedRate" >加速2倍播放</button>
+    <button id="decelerateRate" >减速2倍播放</button>
+    <button id="increaseVol" >音量增加</button>
+    <button id="decreaseVol" >音量减少</button>
+  </div>
 
-    <!--footer area -->
-    <div id="footer" class="footer">
-      <p> 显示当前时间:</p>
-      <p id="time" class="time">Default Time</p>
-    </div>
+  <!--footer area -->
+  <footer>
+    <p> 显示当前时间:</p>
+    <p id="time" class="time">Default Time</p>
+  </footer>
   </body>
 </html>
