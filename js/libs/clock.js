@@ -240,7 +240,7 @@ window.addEventListener("load", function(argument) {
     return offsetX;
   }
 
-  var canvas = document.getElementById("canvas");
+  var canvas = document.getElementById("clock-canvas");
   canvas.width = WINDOW_WIDTH;
   canvas.height = WINDOW_HEIGHT;
   context = canvas.getContext("2d");

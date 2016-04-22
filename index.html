@@ -8,55 +8,56 @@
 
     <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
     so we use a script file. -->
-    <script src="js/app.js"></script>
-    <script src="js/control.js"></script>
-    <script src="js/libs/jquery.js"></script>
+    <script src="js/bin/app.js"></script>
+    <script src="js/bin/control.js"></script>
     <script src="js/libs/clock.js"></script>
   </head>
   <body>
 
   <!-- index page header-->
   <header class="header">
-    <h1 id="h1">MPlayer</h1>
-    <button onclick="showList();">List/Video</button>
+    <h1 id="video-name">MPlayer</h1>
+    <button id="show-list">Video List</button>
   </header>
 
   <!--video play list area -->
-  <div id="list" class="playList" hidden >
+  <div id="video-list" class="play_list" hidden>
   </div>
 
    <!--video introduction area -->
-  <div id="content" class="videoInformation">
+  <div id="video-information" class="video_information">
     <p> This is a Firefox video player sample! </p>
     <p> This is a Firefox video player sample! </p>
     <p> This is a Firefox video player sample! Welcome to u,my dear BriceChou! Welcome to u,my dear BriceChou!</p>
   </div>
 
   <!--video player area  -->
-  <video id="video" class ="videoArea" src="res/video/sintel.mp4" type="video/mp4" >
+  <video id="video-are" class ="video_area" src="res/video/sintel.mp4" type="video/mp4">
     Your brower does not support HTML video.</video>
 
   <!-- canvas area-->
-  <canvas id="canvas" class="clockCanvas" ></canvas>
+  <canvas id="clock-canvas" class="clock_canvas"></canvas>
 
   <!--contol the video button area -->
-  <div id="control" class="controlVideo" >
-    <button id="playOrPause" >播放/暂停</button>
-    <button id="stop" >停止</button>
-    <button id="reload" >重新加载</button>
-    <button id="mute" >静音</button>
-    <button id="ffd" >快进5秒</button>
-    <button id="fbd" >快退5秒</button>
-    <button id="speedRate" >加速2倍播放</button>
-    <button id="decelerateRate" >减速2倍播放</button>
-    <button id="increaseVol" >音量增加</button>
-    <button id="decreaseVol" >音量减少</button>
+  <div id="control-video" class="control_video">
+    <button id="play-pause">播放/暂停</button>
+    <button id="stop">停止</button>
+    <button id="reload">重新加载</button>
+    <button id="mute">静音</button>
+    <button id="fast-forward">快进5秒</button>
+    <button id="fast-backward">快退5秒</button>
+    <button id="speed-rate">加速2倍播放</button>
+    <button id="decelerate-rate">减速2倍播放</button>
+    <button id="increase-volume">音量增加</button>
+    <button id="decrease-volume">音量减少</button>
   </div>
 
   <!--footer area -->
   <footer>
-    <p> 显示当前时间:</p>
-    <p id="time" class="time">Default Time</p>
+    <p>Current Time:</p>
+    <time id="time" class="time">
+      Default Time
+    </time>
   </footer>
   </body>
 </html>

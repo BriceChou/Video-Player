@@ -5,6 +5,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  scroll: no;
+  overflow-x: hidden;
   font: 100% "Comic Sans MS", cursive, sans-serif;
   background-color: #78664a;
 }
@@ -74,47 +76,49 @@ footer {
   border: .18rem solid #FFF;
 }
 
-.videoInformation {
+.video_information {
   display: inline;
   text-indent: 12pt;
   color: DarkSeaGreen;
 }
 
-.controlVideo {
+.control_video {
   padding: 0;
   margin: 0 0 0 2.5rem;
 }
 
-.controlVideo button {
+.control_video button {
   width: 7.5rem;
   height: 2rem;
   margin: 0;
   border: .2rem outset gray;
 }
 
-.controlVideo button:active {
+.control_video button:active {
   border: .2rem inset grey;
 }
 
-.controlVideo button:hover {
+.control_video button:hover {
   border: .2rem inset grey;
 }
 
-/*
-*via image control to play video
-*/
-.imgControl {
-
-}
-
-.playList {
+.play_list {
+  display: none;
   margin: 0 auto;
 }
 
-.clockCanvas {
+.clock_canvas {
   margin: 0;
 }
 
-.videoAre {
+.video_are {
   margin: 0 0 0 .45rem;
+}
+
+.button_ouset {
+  border: .2rem outset gray;
+}
+
+.button_inset {
+  border: .2rem inset grey;
 }
