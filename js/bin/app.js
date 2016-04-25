@@ -74,6 +74,5 @@ window.addEventListener("load", function() {
 
     return app;
   }();
-
   App.init();
 });

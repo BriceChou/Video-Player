@@ -36,7 +36,6 @@ var Control = function() {
     var decreaseVolumeButton = document.getElementById("decrease-volume");
     var speedRateButton = document.getElementById("speed-rate");
     var decelerateRateButton = document.getElementById("decelerate-rate");
-    //console.log("control.js: SUCCESSED ENTER THE CONTROL INIT FUNCTION.");
 
     // click the button to play or pause the video
     playPauseButton.addEventListener("click", function() {
@@ -121,9 +120,9 @@ var Control = function() {
       }
     });
   };
+
   control = {
-    videoId: videoId,
-    init: init,
+    init: init
   };
 
   return control;
