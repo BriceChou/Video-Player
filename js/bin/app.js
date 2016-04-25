@@ -1,6 +1,7 @@
 window.addEventListener("load", function() {
+
   var App = function() {
-    'use strict';
+
     var app;
 
     // set the current time
@@ -12,25 +13,36 @@ window.addEventListener("load", function() {
 
     //load list form the local JSON file
     var loadList = function() {
+      // config JSON file path
       var filePath = "./data/list.json";
 
-      var listUl = "video-list-ul";
+      // define the list ul object
+      var listUl = document.getElementById("video-list-ul");
 
       var xhr;
 
+      // get the div list id and contoel the display status
       var list = document.getElementById("video-list");
+
       try {
         xhr = new XMLHttpRequest();
         xhr.open("GET", filePath, false);
         xhr.onreadystatechange = function() {
           if (xhr.readyState == 4 && xhr.status == 200) {
+
+            // via eval function get the JSON data
             var data = eval('(' + xhr.responseText + ')');
             var i = 0;
+
+            // get all data from the JSON file
             for (i; i < data.list.length; i++) {
+
+              // create the subNode LI
               var node = document.createElement("LI");
               var textnode = document.createTextNode(data.list[i].video_name);
               node.appendChild(textnode);
-              document.getElementById("video-list-ul").appendChild(node);
+              listUl.appendChild(node);
+              listUl.innerHTML = "Play List";
             }
           } else {
             //cope with the error
@@ -45,8 +57,15 @@ window.addEventListener("load", function() {
     };
 
     var init = function() {
+
+      // load the list information from JSON file
       loadList();
+
+      // set the footer time
       setCurrentTime();
+
+      // init the control button
+      Control.init();
     };
 
     app = {
@@ -57,5 +76,4 @@ window.addEventListener("load", function() {
   }();
 
   App.init();
-  Control.init();
 });

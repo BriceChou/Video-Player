@@ -5,6 +5,7 @@
  */
 
 var Control = function() {
+
   // change the figure can adjust the range of minimum video playback rate
   var PLAYBACK_RATE = 0.2;
 
