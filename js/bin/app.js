@@ -21,9 +21,6 @@ window.addEventListener("load", function() {
 
       var xhr;
 
-      // get the div list id and contoel the display status
-      var list = document.getElementById("video-list");
-
       try {
         xhr = new XMLHttpRequest();
         xhr.open("GET", filePath, false);
@@ -42,12 +39,12 @@ window.addEventListener("load", function() {
               var textnode = document.createTextNode(data.list[i].video_name);
               node.appendChild(textnode);
               listUl.appendChild(node);
-              listUl.innerHTML = "Play List";
             }
           } else {
             //cope with the error
             console.log("app.js: Can't load the play list information.");
           }
+          listUl.innerHTML = "Play List";
         }
         xhr.send();
       } catch (e) {
