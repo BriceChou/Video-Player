@@ -7,10 +7,10 @@
 var Control = function() {
 
   // change the figure can adjust the range of minimum video playback rate
-  var PLAYBACK_RATE = 0.2;
+  var PLAYBACK_RATE = 0.05;
 
   // change the figure can adjust the range of minimum video volume
-  var VIDEO_VOLUME = 0.2;
+  var VIDEO_VOLUME = 0.02;
 
   // chenge the figure can adjust the range of minimum fastward time
   var FASTWARD_TIME = 0.5;
@@ -44,13 +44,16 @@ var Control = function() {
         playPauseButton.className = "button_inset";
       } else {
         video.pause();
-        playPauseButton.className = "button_ouset";
+        playPauseButton.className = "button_outset";
       }
     });
 
     // stop to play video
     stopButton.addEventListener("click", function() {
-      video.loadeddata = video.src;
+      video.load();
+      if (video.loaded == true) {
+        video.pause();
+      }
     });
 
     // reload the video
@@ -72,7 +75,7 @@ var Control = function() {
     muteButton.addEventListener("click", function() {
       if (video.muted) {
         video.muted = false;
-        muteButton.className = "button_ouset";
+        muteButton.className = "button_outset";
       } else {
         video.muted = true;
         muteButton.className = "button_inset";
@@ -81,12 +84,20 @@ var Control = function() {
 
     // increase video volume
     increaseVolumeButton.addEventListener("click", function() {
-      video.volume += VIDEO_VOLUME;
+      if (video.volume < 1) {
+        video.volume += VIDEO_VOLUME;
+      } else {
+        video.volume = 1;
+      }
     });
 
     // decrease video volume
     decreaseVolumeButton.addEventListener("click", function() {
-      video.volume -= VIDEO_VOLUME;
+      if (video.volume > VIDEO_VOLUME) {
+        video.volume -= VIDEO_VOLUME;
+      } else {
+        video.volume = 0;
+      }
     });
 
     //speed rate to play video

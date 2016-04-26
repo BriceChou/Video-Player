@@ -93,10 +93,6 @@ footer {
   border: .2rem outset gray;
 }
 
-.control_video button:active {
-  border: .2rem inset grey;
-}
-
 .control_video button:hover {
   border: .2rem inset grey;
 }
@@ -113,7 +109,7 @@ footer {
   margin: 0 0 0 .45rem;
 }
 
-.button_ouset {
+.button_outset {
   border: .2rem outset gray;
 }
 
