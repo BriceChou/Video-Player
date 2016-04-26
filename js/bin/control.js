@@ -56,7 +56,7 @@ var Control = function() {
     // stop to play video
     stopButton.addEventListener("click", function() {
       video.load();
-      if (video.loaded == true) {
+      if (video.loaded) {
         video.pause();
       }
     });
@@ -64,7 +64,7 @@ var Control = function() {
     // reload the video
     reloadButton.addEventListener("click", function() {
       video.load();
-      if (video.loaded == true) {
+      if (video.loaded) {
         video.play();
       }
     });
