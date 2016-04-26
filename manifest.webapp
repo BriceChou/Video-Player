@@ -13,10 +13,10 @@
   },
 
   "permissions":[
-    "contacts",
+    "contact",
     "settings",
-    "keyboards",
-    "videos"
+    "keyboard",
+    "video"
   ],
 
   "developer": {

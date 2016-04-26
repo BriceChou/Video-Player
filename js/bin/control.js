@@ -5,6 +5,7 @@
  */
 
 var Control = function() {
+  "use strict";
 
   // change the figure can adjust the range of minimum video playback rate
   const PLAYBACK_RATE = 0.05;

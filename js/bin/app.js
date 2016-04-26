@@ -1,5 +1,5 @@
 window.addEventListener("load", function() {
-
+  "use strict";
   var App = function() {
 
     var app;
