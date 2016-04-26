@@ -23,6 +23,10 @@ var Control = function() {
 
   var control;
 
+  // create a dynamic function for adding a new CSS style
+  var addClassName = function(elementId, className) {
+    document.getElementById(elementId).className = className;
+  }
 
   var init = function() {
     video = document.getElementById(videoId);
@@ -41,10 +45,10 @@ var Control = function() {
     playPauseButton.addEventListener("click", function() {
       if (video.paused) {
         video.play();
-        playPauseButton.className = "button_inset";
+        addClassName("play-pause", "button_inset");
       } else {
         video.pause();
-        playPauseButton.className = "button_outset";
+        addClassName("play-pause", "button_outset");
       }
     });
 
@@ -59,16 +63,29 @@ var Control = function() {
     // reload the video
     reloadButton.addEventListener("click", function() {
       video.load();
+      if (video.loaded == true) {
+        video.play();
+      }
     });
 
     // fast forward the video
     fastForwardButton.addEventListener("click", function() {
-      video.currentTime += FASTWARD_TIME;
+      if (video.currentTime < video.duration) {
+        video.currentTime += FASTWARD_TIME;
+      } else {
+        //how to do code
+        video.currentTime = video.duration;
+      }
     });
 
     // fast backward the video
     fastBackwardButton.addEventListener("click", function() {
-      video.currentTime -= FASTWARD_TIME;
+      if (video.currentTime > 0) {
+        video.currentTime -= FASTWARD_TIME;
+      } else {
+        //how to do code
+        video.currentTime = 0;
+      }
     });
 
     // mute the video and change the button status
@@ -76,9 +93,10 @@ var Control = function() {
       if (video.muted) {
         video.muted = false;
         muteButton.className = "button_outset";
+        addClassName("mute", "button_outset");
       } else {
         video.muted = true;
-        muteButton.className = "button_inset";
+        addClassName("mute", "button_inset");
       }
     });
 
