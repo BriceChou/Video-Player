@@ -13,16 +13,15 @@ window.addEventListener("load", function() {
 
     //load list form the local JSON file
     var loadList = function() {
+
       // config JSON file path
-      var filePath = "./data/list.json";
-
-      // define the list ul object
-      var listUl = document.getElementById("video-list-ul");
-
-      var xhr;
-
+      var filePath = "/data/list.json";
       try {
-        xhr = new XMLHttpRequest();
+        // define the list ul object
+        var listUl = document.getElementById("video-list-ul");
+        listUl.innerHTML = "Play List";
+
+        var xhr = new XMLHttpRequest();
         xhr.open("GET", filePath, false);
         xhr.onreadystatechange = function() {
           if (xhr.readyState == 4 && xhr.status == 200) {
@@ -44,7 +43,6 @@ window.addEventListener("load", function() {
             //cope with the error
             console.log("app.js: Can't load the play list information.");
           }
-          listUl.innerHTML = "Play List";
         }
         xhr.send();
       } catch (e) {
