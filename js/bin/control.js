@@ -7,13 +7,13 @@
 var Control = function() {
 
   // change the figure can adjust the range of minimum video playback rate
-  var PLAYBACK_RATE = 0.05;
+  const PLAYBACK_RATE = 0.05;
 
   // change the figure can adjust the range of minimum video volume
-  var VIDEO_VOLUME = 0.02;
+  const VIDEO_VOLUME = 0.02;
 
   // chenge the figure can adjust the range of minimum fastward time
-  var FASTWARD_TIME = 0.5;
+  const FASTWARD_TIME = 0.5;
 
   // define public variable to confirm video location
   var videoId = "video-area";
