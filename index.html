@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
-    <title>Video Player</title>
-    <link href="/style/css/main.css" rel="stylesheet" type="text/css"/>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
+  <title>Video Player</title>
+  <!-- <link rel="stylesheet" href="./style/css/main.css"  type="text/css"/> -->
 
-    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+  <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
     so we use a script file. -->
-    <script src="/js/bin/app.js"></script>
-    <script src="/js/bin/control.js"></script>
-    <script src="/js/libs/clock.js"></script>
-  </head>
-  <body>
+  <script src="./js/bin/app.js"></script>
+  <!-- <script src="./js/bin/control_video.js"></script> -->
+  <script src="./js/utils.js"></script>
+  <!-- <script src="./js/libs/clock.js"></script> -->
+</head>
+<body>
 
   <!-- index page header-->
   <header class="header">
@@ -22,26 +23,26 @@
 
   <!--video play list area -->
   <div id="video-list" class="play_list">
-    <ul id = "video-list-ul">
-    </ul>
+    <ul id="video-list-ul"></ul>
   </div>
 
-   <!--video introduction area -->
+  <!--video introduction area -->
   <div id="video-information" class="video_information">
-    <p> This is a Firefox video player sample! </p>
-    <p> This is a Firefox video player sample! </p>
-    <p> This is a Firefox video player sample! Welcome to u,my dear BriceChou! Welcome to u,my dear BriceChou!</p>
+    <p>This is a Firefox video player sample!</p>
+    <p>This is a Firefox video player sample!</p>
+    <p>
+      This is a Firefox video player sample! Welcome to u,my dear BriceChou! Welcome to u,my dear BriceChou!
+    </p>
   </div>
 
   <!--video player area  -->
-  <video id="video-area" class ="video_area" src="./style/videos/sintel.mp4" type="video/mp4">
-    Your brower does not support HTML video.</video>
+  <video id="video-area" class ="video_area" src="./style/videos/sintel.mp4" type="video/mp4">Your brower does not support HTML video.</video>
 
   <!-- canvas area-->
   <canvas id="clock-canvas" class="clock_canvas"></canvas>
 
   <!--contol the video button area -->
-  <div id="control-video" class="control_video">
+  <div class="control_video">
     <button id="play-pause">播放/暂停</button>
     <button id="stop">停止</button>
     <button id="reload">重新加载</button>
@@ -53,13 +54,15 @@
     <button id="increase-volume">音量增加</button>
     <button id="decrease-volume">音量减少</button>
   </div>
-
+  <div>
+    <a href="tests/html/API/pick-video.html">
+      <img src="style/icons/play/9.ico" width="50" height="50" alt="pick video"/>
+    </a>
+  </div>
   <!--footer area -->
   <footer>
     <p>Current Time:</p>
-    <p id="time" class="time">
-      Default Time
-    </p>
+    <p id="time" class="time">Default Time</p>
   </footer>
-  </body>
+</body>
 </html>

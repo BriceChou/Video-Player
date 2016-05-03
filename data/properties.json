@@ -1,0 +1,33 @@
+{
+    "list": [{
+        "id": 1,
+        "name": "brownbear",
+        "video_name": "brownbear.mp4",
+        "src": "/style/videos/brownbear.mp4",
+        "type": "video/mp4"
+    }, {
+        "id": 2,
+        "name": "brownbear(Audio)",
+        "video_name": "brownbear.ogg",
+        "src": "/style/videos/brownbear.ogg",
+        "type": "video/ogg"
+    }, {
+        "id": 3,
+        "name": "bunnytrailer",
+        "video_name": "bunnytrailer.mp4",
+        "src": "/style/videos/bunnytrailer.mp4",
+        "type": "video/mp4"
+    }, {
+        "id": 4,
+        "name": "sintel",
+        "video_name": "sintel.mp4",
+        "src": "/style/videos/sintel.mp4",
+        "type": "video/mp4"
+    }, {
+        "id": 5,
+        "name": "trailer",
+        "video_name": "trailer.mp4",
+        "src": "/style/videos/trailer.mp4",
+        "type": "video/mp4"
+    }]
+}

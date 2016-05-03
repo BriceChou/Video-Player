@@ -4,8 +4,8 @@
  * @datetime 2016-4-22 16:30
  */
 
-var Control = function() {
-  "use strict";
+var ControlVideo = function() {
+  'use strict';
 
   // change the figure can adjust the range of minimum video playback rate
   const PLAYBACK_RATE = 0.05;
@@ -16,45 +16,38 @@ var Control = function() {
   // chenge the figure can adjust the range of minimum fastward time
   const FASTWARD_TIME = 0.5;
 
-  // define public variable to confirm video location
-  var videoId = "video-area";
-
   // define the video object;
   var video;
 
-  var control;
+  var controlVideo;
 
-  // create a dynamic function for adding a new CSS style
-  var addClassName = function(elementId, className) {
-    document.getElementById(elementId).className = className;
-  }
-
-  var init = function() {
+  var init = function(videoId) {
+    console.log(videoId);
     video = document.getElementById(videoId);
-    var playPauseButton = document.getElementById("play-pause");
-    var stopButton = document.getElementById("stop");
-    var reloadButton = document.getElementById("reload");
-    var fastForwardButton = document.getElementById("fast-forward");
-    var fastBackwardButton = document.getElementById("fast-backward");
-    var muteButton = document.getElementById("mute");
-    var increaseVolumeButton = document.getElementById("increase-volume");
-    var decreaseVolumeButton = document.getElementById("decrease-volume");
-    var speedRateButton = document.getElementById("speed-rate");
-    var decelerateRateButton = document.getElementById("decelerate-rate");
+    var playPauseButton = document.getElementById('play-pause');
+    var stopButton = document.getElementById('stop');
+    var reloadButton = document.getElementById('reload');
+    var fastForwardButton = document.getElementById('fast-forward');
+    var fastBackwardButton = document.getElementById('fast-backward');
+    var muteButton = document.getElementById('mute');
+    var increaseVolumeButton = document.getElementById('increase-volume');
+    var decreaseVolumeButton = document.getElementById('decrease-volume');
+    var speedRateButton = document.getElementById('speed-rate');
+    var decelerateRateButton = document.getElementById('decelerate-rate');
 
-    // click the button to play or pause the video
-    playPauseButton.addEventListener("click", function() {
+    // FIXME : click the button to play or pause the video
+    playPauseButton.addEventListener('click', function() {
       if (video.paused) {
         video.play();
-        addClassName("play-pause", "button_inset");
+        playPauseButton.className = 'button_inset';
       } else {
         video.pause();
-        addClassName("play-pause", "button_outset");
+        playPauseButton.className = 'button_outset';
       }
     });
 
     // stop to play video
-    stopButton.addEventListener("click", function() {
+    stopButton.addEventListener('click', function() {
       video.load();
       if (video.loaded) {
         video.pause();
@@ -62,7 +55,7 @@ var Control = function() {
     });
 
     // reload the video
-    reloadButton.addEventListener("click", function() {
+    reloadButton.addEventListener('click', function() {
       video.load();
       if (video.loaded) {
         video.play();
@@ -70,7 +63,7 @@ var Control = function() {
     });
 
     // fast forward the video
-    fastForwardButton.addEventListener("click", function() {
+    fastForwardButton.addEventListener('click', function() {
       if (video.currentTime < video.duration) {
         video.currentTime += FASTWARD_TIME;
       } else {
@@ -80,7 +73,7 @@ var Control = function() {
     });
 
     // fast backward the video
-    fastBackwardButton.addEventListener("click", function() {
+    fastBackwardButton.addEventListener('click', function() {
       if (video.currentTime > 0) {
         video.currentTime -= FASTWARD_TIME;
       } else {
@@ -90,19 +83,18 @@ var Control = function() {
     });
 
     // mute the video and change the button status
-    muteButton.addEventListener("click", function() {
+    muteButton.addEventListener('click', function() {
       if (video.muted) {
         video.muted = false;
-        muteButton.className = "button_outset";
-        addClassName("mute", "button_outset");
+        muteButton.className = 'button_outset';
       } else {
         video.muted = true;
-        addClassName("mute", "button_inset");
+        muteButton.className = 'button_inset';
       }
     });
 
     // increase video volume
-    increaseVolumeButton.addEventListener("click", function() {
+    increaseVolumeButton.addEventListener('click', function() {
       if (video.volume < 1) {
         video.volume += VIDEO_VOLUME;
       } else {
@@ -111,7 +103,7 @@ var Control = function() {
     });
 
     // decrease video volume
-    decreaseVolumeButton.addEventListener("click", function() {
+    decreaseVolumeButton.addEventListener('click', function() {
       if (video.volume > VIDEO_VOLUME) {
         video.volume -= VIDEO_VOLUME;
       } else {
@@ -120,17 +112,17 @@ var Control = function() {
     });
 
     //speed rate to play video
-    speedRateButton.addEventListener("click", function() {
+    speedRateButton.addEventListener('click', function() {
       video.playbackRate += PLAYBACK_RATE;
     });
 
     //decelerate rate to play video
-    decelerateRateButton.addEventListener("click", function() {
+    decelerateRateButton.addEventListener('click', function() {
       video.playbackRate -= PLAYBACK_RATE;
     });
 
     // video playback failed - show a message saying why
-    video.addEventListener("onerror", function() {
+    video.addEventListener('onerror', function() {
       switch (video.error.code) {
         case video.error.MEDIA_ERR_ABORTED:
           alert('You aborted the video playback.');
@@ -151,9 +143,8 @@ var Control = function() {
     });
   };
 
-  control = {
+  controlVideo = {
     init: init
   };
-
-  return control;
+  return controlVideo;
 }();

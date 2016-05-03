@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name ="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
+  <title>Pick Video</title>
+  <link rel  ="stylesheet" href="/style/css/main.css"  type="text/css"/>
+  <script defer src="/js/bin/pick_video.js" ></script>
+</head>
+<body>
+  <header id="header" class="header">
+    <h1 class="title">Please pick a video</h1>
+  </header>
+  <!-- /header -->
+
+  <from autocomplete="true">
+    <label>video path :</label>
+    <input type="text" id="video-path" placeholder="please pick a video..">
+    <input type="file" id="browse-video-location" value="browse.." multiple>
+    <input type="submit">
+  </from>
+
+  <canvas id="play-picked-video" height="240" width="320"></canvas>
+  <footer class="footer">
+    <address>My GitHub URL : github.com/BriceChou</address>
+    <a href="../../../index.html">
+      <img src="/style/icons/play/9.ico" width="50" height="50" alt="pick video"/>
+    </a>
+  </footer>
+</body>
+</html>

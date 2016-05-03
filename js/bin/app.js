@@ -1,28 +1,28 @@
-window.addEventListener("load", function() {
-  "use strict";
+window.addEventListener('load', function() {
+  'use strict';
   var App = function() {
 
     var app;
 
     // set the current time
     var setCurrentTime = function() {
-      var showTime = document.getElementById("time");
+      var showTime = document.getElementById('time');
       var date = new Date();
-      showTime.innerHTML = date.toLocaleString() + "";
+      showTime.innerHTML = date.toLocaleString() + '';
     };
 
     //load list form the local JSON file
     var loadList = function() {
 
       // config JSON file path
-      var filePath = "/data/list.json";
+      var filePath = './data/list.json';
       try {
         // define the list ul object
-        var listUl = document.getElementById("video-list-ul");
-        listUl.innerHTML = "Play List";
+        var listUl = document.getElementById('video-list-ul');
+        listUl.innerHTML = 'Play List';
 
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", filePath, false);
+        xhr.open('GET', filePath, false);
         xhr.onreadystatechange = function() {
           if (xhr.readyState == 4 && xhr.status == 200) {
 
@@ -34,14 +34,14 @@ window.addEventListener("load", function() {
             for (i; i < data.list.length; i++) {
 
               // create the subNode LI
-              var node = document.createElement("LI");
+              var node = document.createElement('LI');
               var textnode = document.createTextNode(data.list[i].video_name);
               node.appendChild(textnode);
               listUl.appendChild(node);
             }
           } else {
             //cope with the error
-            console.log("app.js: Can't load the play list information.");
+            console.log('app.js: Can\'t load the play list information.');
           }
         }
         xhr.send();
@@ -50,8 +50,26 @@ window.addEventListener("load", function() {
         console.log(e);
       }
     };
+    var initLinkFile = function() {
+      var filePathname = window.location.pathname;
 
+      // match the file which end with /*.*
+      var pattern = /\/[a-zA-Z0-9]+\.+[a-zA-Z]/;
+
+      var projectPath = filePathname.substring(0, filePathname.search(pattern));
+      /**
+       * TODO : settings JS/JSON/CSS file location
+       * add a judge function to distinguish libs between users javascript
+       */
+      Utils.setProjectPath(projectPath);
+      Utils.loadJavascript("libs/clock.js");
+      Utils.loadJavascript("bin/control_video.js");
+      Utils.loadCss("main.css");
+
+    };
     var init = function() {
+
+      initLinkFile();
 
       // load the list information from JSON file
       loadList();
@@ -59,8 +77,8 @@ window.addEventListener("load", function() {
       // set the footer time
       setCurrentTime();
 
-      // init the control button
-      Control.init();
+      // init the all control video button and function
+      ControlVideo.init("video-area");
     };
 
     app = {

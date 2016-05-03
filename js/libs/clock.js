@@ -3,7 +3,6 @@
  * only a exmple for me and study canvas how to use
  * and I have reformatted this code
  */
-window.addEventListener("load", function(argument) {
   var WINDOW_WIDTH = 300; //可见区域宽度
   var WINDOW_HEIGHT = 100;
   var RADIUS = 3.5; //球半径
@@ -253,4 +252,3 @@ window.addEventListener("load", function(argument) {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     drawDatetime(context);
   }, 50);
-})
