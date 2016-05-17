@@ -20,10 +20,17 @@ Utils = function() {
   var setProjectPath = function(path) {
     projectPath = path;
   };
-
+  var importLinkFile = function(path) {
+    var temp = path.substr(path.search(/\.+[a-zA-Z]/));
+    if (temp == '.css') {
+      loadCss(path);
+    } else {
+      loadJavascript(path);
+    }
+  };
   var loadJavascript = function(path) {
     var jsFile = document.createElement('SCRIPT');
-    jsFile.src = projectPath + "/js/" + path;
+    jsFile.src = projectPath + '/js/' + path;
     document.getElementsByTagName('head')[0].appendChild(jsFile);
   };
 
@@ -37,8 +44,7 @@ Utils = function() {
 
   utils = {
     setProjectPath: setProjectPath,
-    loadCss: loadCss,
-    loadJavascript: loadJavascript
+    importLinkFile: importLinkFile
   };
   return utils;
 }();

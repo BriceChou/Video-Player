@@ -13,42 +13,16 @@ window.addEventListener('load', function() {
 
     //load list form the local JSON file
     var loadList = function() {
-
-      // config JSON file path
-      var filePath = './data/list.json';
-      try {
-        // define the list ul object
-        var listUl = document.getElementById('video-list-ul');
-        listUl.innerHTML = 'Play List';
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', filePath, false);
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState == 4 && xhr.status == 200) {
-
-            // via eval function get the JSON data
-            var data = eval('(' + xhr.responseText + ')');
-            var i = 0;
-
-            // get all data from the JSON file
-            for (i; i < data.list.length; i++) {
-
-              // create the subNode LI
-              var node = document.createElement('LI');
-              var textnode = document.createTextNode(data.list[i].video_name);
-              node.appendChild(textnode);
-              listUl.appendChild(node);
-            }
-          } else {
-            //cope with the error
-            console.log('app.js: Can\'t load the play list information.');
-          }
-        }
-        xhr.send();
-      } catch (e) {
-        // statements
-        console.log(e);
+      var i = 0;
+      // get all data from the JSON file
+      for (i; i < data.list.length; i++) {
+        // create the subNode LI
+        var node = document.createElement('LI');
+        var textnode = document.createTextNode(data.list[i].video_name);
+        node.appendChild(textnode);
+        listUl.appendChild(node);
       }
+
     };
     var initLinkFile = function() {
       var filePathname = window.location.pathname;
@@ -57,14 +31,15 @@ window.addEventListener('load', function() {
       var pattern = /\/[a-zA-Z0-9]+\.+[a-zA-Z]/;
 
       var projectPath = filePathname.substring(0, filePathname.search(pattern));
+      console.log(projectPath);
       /**
        * TODO : settings JS/JSON/CSS file location
        * add a judge function to distinguish libs between users javascript
        */
       Utils.setProjectPath(projectPath);
-      Utils.loadJavascript("libs/clock.js");
-      Utils.loadJavascript("bin/control_video.js");
-      Utils.loadCss("main.css");
+      Utils.importLinkFile("libs/clock.js");
+      Utils.importLinkFile("bin/control_video.js");
+      Utils.importLinkFile("main.css");
 
     };
     var init = function() {

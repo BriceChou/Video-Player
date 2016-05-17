@@ -8,10 +8,8 @@
 
   <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
     so we use a script file. -->
-  <script src="./js/bin/app.js"></script>
-  <!-- <script src="./js/bin/control_video.js"></script> -->
-  <script src="./js/utils.js"></script>
-  <!-- <script src="./js/libs/clock.js"></script> -->
+  <script defer src="./js/bin/app.js"></script>
+  <script defer src="./js/utils.js"></script>
 </head>
 <body>
 
@@ -20,11 +18,6 @@
     <h1 id="video-name">MPlayer</h1>
     <button id="show-list">Video List</button>
   </header>
-
-  <!--video play list area -->
-  <div id="video-list" class="play_list">
-    <ul id="video-list-ul"></ul>
-  </div>
 
   <!--video introduction area -->
   <div id="video-information" class="video_information">
