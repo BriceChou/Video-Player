@@ -2,7 +2,7 @@ var Json = function() {
   'use strict';
   var json;
   // config JSON file path
-  var filePath = './data/list.json';
+  var filePath = '/data/list.json';
   try {
     // define the list ul object
     var listUl = document.getElementById('video-list-ul');
